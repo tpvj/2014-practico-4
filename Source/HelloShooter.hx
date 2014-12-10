@@ -6,6 +6,7 @@ import flash.display.Bitmap;
 import openfl.Assets;
 import flash.media.Sound;
 import engine.*;
+import extension.admob.*;
 /**
  * ...
  * @author fbricker
@@ -19,6 +20,9 @@ class HelloShooter extends engine.SceneManager {
 
 	public function new () {
 		super();
+		AdMob.initAndroid("ca-app-pub-XXXXX123456","ca-app-pub-XXXXX123457", GravityMode.BOTTOM); // may also be GravityMode.TOP
+        	AdMob.initIOS("ca-app-pub-XXXXX123458","ca-app-pub-XXXXX123459", GravityMode.BOTTOM); // may also be GravityMode.TOP
+
 		googleAnalytics.Stats.init('UA-27265081-3', 'testing.sempaigames.com');
 		instance=this;
 
@@ -32,6 +36,7 @@ class HelloShooter extends engine.SceneManager {
 		setScene('menu');
 		googleAnalytics.Stats.trackEvent('menu','main-menu','open');
 		stage.addEventListener(openfl.events.Event.RESIZE,onResize);
+		AdMob.showBanner();
 	}
 
 	public function onResize(_){

@@ -7,7 +7,7 @@
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
 	<haxelib name="haxe-ga" />
-
+	<haxelib name="openfl-admob" />
 	<assets path="Assets/images" rename="images" include="*" />
 	<assets path="Assets/sounds" rename="sounds" include="*" />
 	
